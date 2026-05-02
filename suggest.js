@@ -5,25 +5,31 @@ const STORAGE_KEY = 'pageturners_suggestions';
 // Sample seed suggestions shown by default
 const seedSuggestions = [
   {
-    title: "The Frozen River",
-    author: "Ariel Lawhon",
-    notes: "A wonderful historical novel about a midwife in 18th-century Maine. Very atmospheric and beautifully written.",
-    suggestedBy: "Ruth K.",
-    date: "April 2025"
+    title: "The Correspondent",
+    author: "Virginia Evans (2025; fiction)",
+    notes: "This is an epistolary novel, i.e., told through letters, emails, and notes.  It documents the protagonist’s personal reflections, friendships, and life, etc.
+The Pima Public Library system has 150 audiobooks, 106 hard covers, 15 large print copies, and 105 eBooks; all are currently in use.
+",
+    suggestedBy: "Daphna",
+    date: "April 2026"
   },
   {
-    title: "North Woods",
-    author: "Daniel Mason",
-    notes: "This book is set in the same house in Massachusetts across several centuries. Unique and fascinating!",
-    suggestedBy: "Joan P.",
-    date: "March 2025"
+    title: "The Professor and the Housekeeper ",
+    author: "Yoko Ogawa (2003 Japanese/2009 English;  fiction)",
+    notes: "The story is about a brilliant mathematician with severe short-term memory loss and the housekeeper hired to care for him, along with her young son.
+The Pima Public Library system has 2 books and 2 eBooks; all are currently in use.
+",
+    suggestedBy: "Daphna",
+    date: "April 2026"
   },
   {
-    title: "The Serviceberry",
-    author: "Robin Wall Kimmerer",
-    notes: "A short but profound book about indigenous wisdom and our relationship with nature. Very thought-provoking.",
-    suggestedBy: "Dorothy C.",
-    date: "February 2025"
+    title: "Rebecca Benson's War",
+    author: "Patti Rudin Albaugh(paperback; 2021  ",
+    notes: "The author lives in SaddleBrooke so we could invite her to a meeting to talk about the book. She wrote in an article in the local paper that she struggled with writing about a war that she had no direct connection to. 
+The book is in paperback and inexpensive. Used copies are even less expensive. It is also available in Kindle but not on Audible. I have not checked the local libraries to see if they carry it. 
+",
+    suggestedBy: "Chris",
+    date: "February 2026"
   }
 ];
 
