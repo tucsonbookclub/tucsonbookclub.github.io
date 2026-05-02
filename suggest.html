@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suggest a Book – The Page Turners</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">📖</span>
+        <span class="logo-text">The Page Turners</span>
+      </div>
+      <nav>
+        <a href="index.html" class="nav-link">Upcoming Meetings</a>
+        <a href="suggest.html" class="nav-link active">Suggest a Book</a>
+        <a href="archive.html" class="nav-link">Past Books</a>
+        <a href="about.html" class="nav-link">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Suggest a Book</h1>
+    <p class="hero-sub">Have a book you'd love us to read? Share it here!</p>
+  </section>
+
+  <main class="container">
+
+    <div class="form-card">
+      <p class="form-intro">Fill in the information below and click <strong>Submit My Suggestion</strong>. All fields with a <span class="required-star">*</span> are required.</p>
+
+      <form id="suggest-form" onsubmit="submitForm(event)">
+
+        <div class="form-group">
+          <label for="book-title">Book Title <span class="required-star">*</span></label>
+          <input type="text" id="book-title" name="book-title" placeholder="Enter the book title" required />
+        </div>
+
+        <div class="form-group">
+          <label for="book-author">Author's Name <span class="required-star">*</span></label>
+          <input type="text" id="book-author" name="book-author" placeholder="Enter the author's name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="your-name">Your Name <span class="required-star">*</span></label>
+          <input type="text" id="your-name" name="your-name" placeholder="Enter your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="book-notes">Why Would You Recommend This Book?</label>
+          <textarea id="book-notes" name="book-notes" rows="6" placeholder="Tell us a little about it — why do you think the group would enjoy it? No spoilers please!"></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Submit My Suggestion ✉️</button>
+
+      </form>
+
+      <!-- Success message (hidden until form submitted) -->
+      <div id="success-message" class="success-box" style="display:none;">
+        <div class="success-icon">✅</div>
+        <h2>Thank You!</h2>
+        <p>Your book suggestion has been received. The club coordinators will review it for a future meeting.</p>
+        <button class="btn-secondary" onclick="resetForm()">Submit Another Suggestion</button>
+      </div>
+
+    </div>
+
+    <!-- Existing suggestions display -->
+    <div class="suggestions-section">
+      <h2 class="section-title">📚 Recent Suggestions from Members</h2>
+      <p class="section-note">These are books our members have recently suggested for future meetings.</p>
+      <div id="suggestions-list">
+        <!-- Suggestions populated by JS -->
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>The Page Turners Book Club &nbsp;|&nbsp; Tucson, Arizona &nbsp;|&nbsp; <a href="about.html">Contact Us</a></p>
+  </footer>
+
+  <script src="suggest.js"></script>
+  <script src="active-nav.js"></script>
+</body>
+</html>
