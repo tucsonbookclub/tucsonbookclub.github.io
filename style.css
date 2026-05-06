@@ -1,41 +1,43 @@
 /* =============================================
-   TUCSON BOOK CLUB — STYLESHEET
-   Warm, elegant, senior-friendly design
-   Large type, high contrast, generous spacing
+   THE PAGE TURNERS BOOK CLUB — STYLESHEET
+   Clean sans-serif design, senior-friendly
+   Black, grey, white with deep red & pink accents
    ============================================= */
 
-/* --- Google Fonts fallback --- */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap');
 
 /* --- CSS Variables --- */
 :root {
-  --cream:       #fdf6ec;
-  --warm-white:  #fffdf9;
-  --tan:         #e8d9c0;
-  --brown-light: #c4a882;
-  --brown:       #8b6545;
-  --brown-dark:  #5c3d1e;
-  --green:       #4a6741;
-  --green-light: #dde8db;
-  --text-main:   #2e1f0f;
-  --text-muted:  #6b5240;
-  --border:      #d4c0a8;
-  --shadow:      rgba(92, 61, 30, 0.12);
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body:    'Lora', Georgia, serif;
+  --white:        #ffffff;
+  --off-white:    #f7f7f8;
+  --grey-light:   #e8e8ea;
+  --grey-mid:     #b0b0b6;
+  --grey-dark:    #555560;
+  --charcoal:     #2a2a32;
+  --black:        #12121a;
+  --red-deep:     #8b1a2e;
+  --red-mid:      #b02240;
+  --pink-soft:    #e8a0b0;
+  --pink-light:   #f5dde3;
+  --text-main:    #1e1e26;
+  --text-muted:   #5a5a68;
+  --border:       #d8d8dc;
+  --shadow:       rgba(18, 18, 26, 0.10);
+  --font-display: 'DM Sans', 'Segoe UI', Arial, sans-serif;
+  --font-body:    'Nunito', 'Segoe UI', Arial, sans-serif;
 }
 
 /* --- Reset & Base --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-  font-size: 19px; /* Larger base size for seniors */
+  font-size: 19px;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-body);
-  background-color: var(--cream);
+  background-color: var(--off-white);
   color: var(--text-main);
   line-height: 1.75;
   min-height: 100vh;
@@ -43,14 +45,14 @@ body {
   flex-direction: column;
 }
 
-/* Background texture */
+/* Subtle background */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(196,168,130,0.08) 0%, transparent 60%),
-    radial-gradient(circle at 80% 20%, rgba(74,103,65,0.05) 0%, transparent 50%);
+    radial-gradient(circle at 15% 50%, rgba(139,26,46,0.04) 0%, transparent 55%),
+    radial-gradient(circle at 85% 20%, rgba(176,34,64,0.03) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
@@ -62,13 +64,13 @@ main, header, footer, section {
 
 /* --- Header / Navigation --- */
 header {
-  background: var(--brown-dark);
-  background-image: linear-gradient(135deg, #3d2510 0%, #5c3d1e 60%, #7a5030 100%);
+  background: var(--black);
   padding: 0 2rem;
-  box-shadow: 0 3px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 3px solid var(--red-deep);
 }
 
 .header-inner {
@@ -92,10 +94,10 @@ header {
 
 .logo-text {
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #f5e8d5;
-  letter-spacing: 0.02em;
+  color: var(--white);
+  letter-spacing: 0.01em;
   white-space: nowrap;
 }
 
@@ -108,8 +110,8 @@ nav {
 .nav-link {
   font-family: var(--font-body);
   font-size: 1rem;
-  font-weight: 500;
-  color: #ddd0c0;
+  font-weight: 600;
+  color: var(--grey-mid);
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
@@ -118,53 +120,40 @@ nav {
 }
 
 .nav-link:hover {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
 }
 
 .nav-link.active {
-  background: var(--brown-light);
-  color: var(--brown-dark);
-  font-weight: 600;
+  background: var(--red-deep);
+  color: var(--white);
+  font-weight: 700;
 }
 
-/* --- Hero Banner --- */
+/* --- Hero Banner (shorter) --- */
 .hero {
-  background: linear-gradient(160deg, #4a3520 0%, #6b4a28 50%, #5c3d1e 100%);
-  color: #fdf0e0;
+  background: var(--charcoal);
+  color: var(--white);
   text-align: center;
-  padding: 3.5rem 2rem 3rem;
-  border-bottom: 4px solid var(--brown-light);
+  padding: 1.6rem 2rem 1.4rem;
+  border-bottom: 3px solid var(--red-deep);
   position: relative;
   overflow: hidden;
 }
 
-.hero::before {
-  content: '"';
-  position: absolute;
-  top: -0.5rem;
-  left: 2rem;
-  font-family: var(--font-display);
-  font-size: 12rem;
-  color: rgba(255,255,255,0.04);
-  line-height: 1;
-  pointer-events: none;
-}
-
 .hero h1 {
   font-family: var(--font-display);
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.01em;
-  margin-bottom: 0.6rem;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  margin-bottom: 0.3rem;
+  color: var(--white);
 }
 
 .hero-sub {
-  font-size: 1.15rem;
-  color: #e8d4bc;
-  font-style: italic;
-  max-width: 600px;
+  font-size: 1rem;
+  color: var(--grey-mid);
+  max-width: 580px;
   margin: 0 auto;
 }
 
@@ -178,7 +167,7 @@ nav {
 
 /* --- Meeting Cards --- */
 .meeting-card {
-  background: var(--warm-white);
+  background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: 14px;
   margin-bottom: 2rem;
@@ -188,23 +177,23 @@ nav {
 }
 
 .meeting-card:hover {
-  box-shadow: 0 8px 28px rgba(92,61,30,0.18);
+  box-shadow: 0 8px 28px rgba(18,18,26,0.16);
   transform: translateY(-2px);
 }
 
 .meeting-card.featured {
-  border-color: var(--brown);
+  border-color: var(--red-mid);
   border-width: 2px;
-  box-shadow: 0 6px 24px rgba(92,61,30,0.2);
+  box-shadow: 0 6px 24px rgba(139,26,46,0.18);
 }
 
 .meeting-badge {
-  background: var(--brown-dark);
-  color: #f5e8d5;
+  background: var(--red-deep);
+  color: var(--white);
   font-family: var(--font-display);
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   padding: 0.45rem 1.4rem;
 }
@@ -217,24 +206,24 @@ nav {
 }
 
 .meeting-date-block {
-  background: var(--green);
+  background: var(--charcoal);
   color: white;
   border-radius: 10px;
   min-width: 90px;
   text-align: center;
   padding: 0.9rem 0.7rem;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(74,103,65,0.3);
+  box-shadow: 0 2px 8px rgba(18,18,26,0.25);
 }
 
 .meeting-month {
   display: block;
   font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.88rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0.9;
+  letter-spacing: 0.1em;
+  color: var(--pink-soft);
 }
 
 .meeting-day {
@@ -244,12 +233,13 @@ nav {
   font-weight: 700;
   line-height: 1;
   margin: 0.2rem 0;
+  color: var(--white);
 }
 
 .meeting-year {
   display: block;
-  font-size: 0.85rem;
-  opacity: 0.8;
+  font-size: 0.82rem;
+  color: var(--grey-mid);
 }
 
 .meeting-details { flex: 1; }
@@ -258,14 +248,13 @@ nav {
   font-size: 0.95rem;
   color: var(--text-muted);
   margin-bottom: 0.5rem;
-  font-style: italic;
 }
 
 .book-title {
   font-family: var(--font-display);
-  font-size: 1.65rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: var(--brown-dark);
+  color: var(--black);
   line-height: 1.2;
   margin-bottom: 0.2rem;
 }
@@ -296,13 +285,13 @@ nav {
 }
 
 .meeting-note a {
-  color: var(--green);
+  color: var(--red-mid);
   font-weight: 600;
 }
 
 /* --- Suggest Form --- */
 .form-card {
-  background: var(--warm-white);
+  background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: 14px;
   padding: 2.5rem;
@@ -318,7 +307,7 @@ nav {
   border-bottom: 1px solid var(--border);
 }
 
-.required-star { color: #b33; font-weight: 700; }
+.required-star { color: var(--red-mid); font-weight: 700; }
 
 .form-group {
   margin-bottom: 1.6rem;
@@ -327,8 +316,8 @@ nav {
 label {
   display: block;
   font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--brown-dark);
+  font-weight: 700;
+  color: var(--charcoal);
   margin-bottom: 0.5rem;
   font-family: var(--font-display);
 }
@@ -340,7 +329,7 @@ textarea {
   font-family: var(--font-body);
   font-size: 1.05rem;
   color: var(--text-main);
-  background: var(--cream);
+  background: var(--off-white);
   border: 2px solid var(--border);
   border-radius: 8px;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -350,41 +339,41 @@ textarea {
 input[type="text"]:focus,
 textarea:focus {
   outline: none;
-  border-color: var(--brown);
-  box-shadow: 0 0 0 3px rgba(139,101,69,0.15);
+  border-color: var(--red-mid);
+  box-shadow: 0 0 0 3px rgba(176,34,64,0.12);
 }
 
 textarea { resize: vertical; }
 
 .btn-primary {
   display: inline-block;
-  background: var(--brown-dark);
-  color: #f5e8d5;
+  background: var(--red-deep);
+  color: var(--white);
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   padding: 0.9rem 2.2rem;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  box-shadow: 0 3px 10px rgba(92,61,30,0.25);
+  box-shadow: 0 3px 10px rgba(139,26,46,0.3);
   letter-spacing: 0.02em;
 }
 
 .btn-primary:hover {
-  background: #3d2510;
+  background: var(--red-mid);
   transform: translateY(-1px);
-  box-shadow: 0 5px 16px rgba(92,61,30,0.3);
+  box-shadow: 0 5px 16px rgba(139,26,46,0.35);
 }
 
 .btn-secondary {
   display: inline-block;
-  background: var(--green);
-  color: white;
+  background: var(--charcoal);
+  color: var(--white);
   font-family: var(--font-display);
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.75rem 1.8rem;
   border: none;
   border-radius: 8px;
@@ -393,7 +382,7 @@ textarea { resize: vertical; }
   transition: background 0.2s;
 }
 
-.btn-secondary:hover { background: var(--green-dark, #3a5632); }
+.btn-secondary:hover { background: var(--black); }
 
 /* Success box */
 .success-box {
@@ -404,7 +393,7 @@ textarea { resize: vertical; }
 .success-box h2 {
   font-family: var(--font-display);
   font-size: 1.8rem;
-  color: var(--brown-dark);
+  color: var(--charcoal);
   margin-bottom: 0.6rem;
 }
 .success-box p { font-size: 1.05rem; color: var(--text-muted); }
@@ -414,8 +403,9 @@ textarea { resize: vertical; }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  color: var(--brown-dark);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--charcoal);
   margin-bottom: 0.5rem;
 }
 
@@ -427,7 +417,7 @@ textarea { resize: vertical; }
 }
 
 .suggestion-item {
-  background: var(--warm-white);
+  background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: 10px;
   padding: 1.2rem 1.5rem;
@@ -438,7 +428,8 @@ textarea { resize: vertical; }
 .suggestion-item h3 {
   font-family: var(--font-display);
   font-size: 1.2rem;
-  color: var(--brown-dark);
+  font-weight: 700;
+  color: var(--black);
   margin-bottom: 0.2rem;
 }
 
@@ -467,9 +458,10 @@ textarea { resize: vertical; }
 
 .year-heading {
   font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--brown-dark);
-  border-bottom: 3px solid var(--brown-light);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  border-bottom: 3px solid var(--red-deep);
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
 }
@@ -481,7 +473,7 @@ textarea { resize: vertical; }
 }
 
 .archive-card {
-  background: var(--warm-white);
+  background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: 12px;
   padding: 1.4rem 1.6rem;
@@ -490,23 +482,24 @@ textarea { resize: vertical; }
 }
 
 .archive-card:hover {
-  box-shadow: 0 5px 18px rgba(92,61,30,0.18);
+  box-shadow: 0 5px 18px rgba(18,18,26,0.15);
   transform: translateY(-2px);
 }
 
 .archive-month {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--green);
-  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--red-mid);
+  font-weight: 700;
   margin-bottom: 0.4rem;
 }
 
 .archive-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  color: var(--brown-dark);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--black);
   margin-bottom: 0.2rem;
   line-height: 1.3;
 }
@@ -540,7 +533,7 @@ textarea { resize: vertical; }
 
 /* Zoom card */
 .zoom-card {
-  background: linear-gradient(135deg, #4a6741, #3a5632);
+  background: var(--charcoal);
   color: white;
   border-radius: 14px;
   padding: 2rem 2.2rem;
@@ -548,7 +541,8 @@ textarea { resize: vertical; }
   align-items: center;
   gap: 1.8rem;
   margin-bottom: 3rem;
-  box-shadow: 0 6px 20px rgba(74,103,65,0.3);
+  box-shadow: 0 6px 20px rgba(18,18,26,0.25);
+  border-left: 5px solid var(--red-deep);
 }
 
 .zoom-icon { font-size: 3rem; flex-shrink: 0; }
@@ -556,19 +550,20 @@ textarea { resize: vertical; }
 .zoom-info h2 {
   font-family: var(--font-display);
   font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 0.4rem;
 }
 
 .zoom-info p {
   font-size: 1rem;
-  opacity: 0.9;
+  color: var(--grey-mid);
   margin-bottom: 1rem;
 }
 
 .zoom-link-btn {
   display: inline-block;
-  background: white;
-  color: #3a5632;
+  background: var(--red-deep);
+  color: var(--white);
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 700;
@@ -576,18 +571,19 @@ textarea { resize: vertical; }
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.2s, transform 0.15s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(139,26,46,0.35);
 }
 
 .zoom-link-btn:hover {
-  background: #f0fde8;
+  background: var(--red-mid);
   transform: translateY(-1px);
 }
 
 .zoom-id {
   margin-top: 0.8rem !important;
   font-size: 0.95rem !important;
-  opacity: 0.85;
+  color: var(--grey-mid) !important;
+  opacity: 1 !important;
 }
 
 /* Contact grid */
@@ -599,7 +595,7 @@ textarea { resize: vertical; }
 }
 
 .contact-card {
-  background: var(--warm-white);
+  background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: 14px;
   padding: 1.8rem;
@@ -609,30 +605,31 @@ textarea { resize: vertical; }
 }
 
 .contact-card:hover {
-  box-shadow: 0 6px 22px rgba(92,61,30,0.18);
+  box-shadow: 0 6px 22px rgba(18,18,26,0.15);
   transform: translateY(-2px);
 }
 
 .contact-avatar {
   width: 68px;
   height: 68px;
-  background: var(--brown-dark);
-  color: #f5e8d5;
+  background: var(--red-deep);
+  color: var(--white);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
   margin: 0 auto 1rem;
-  box-shadow: 0 3px 10px rgba(92,61,30,0.25);
+  box-shadow: 0 3px 10px rgba(139,26,46,0.3);
 }
 
 .contact-name {
   font-family: var(--font-display);
   font-size: 1.2rem;
-  color: var(--brown-dark);
+  font-weight: 700;
+  color: var(--black);
   margin-bottom: 0.2rem;
 }
 
@@ -645,8 +642,8 @@ textarea { resize: vertical; }
 
 .contact-email {
   display: block;
-  color: var(--green);
-  font-weight: 600;
+  color: var(--red-mid);
+  font-weight: 700;
   text-decoration: none;
   font-size: 0.95rem;
   word-break: break-all;
@@ -663,16 +660,17 @@ textarea { resize: vertical; }
 
 /* --- Footer --- */
 footer {
-  background: var(--brown-dark);
-  color: #c4a882;
+  background: var(--black);
+  color: var(--grey-dark);
   text-align: center;
   padding: 1.4rem 2rem;
   font-size: 0.95rem;
   margin-top: auto;
+  border-top: 3px solid var(--red-deep);
 }
 
 footer a {
-  color: var(--brown-light);
+  color: var(--pink-soft);
   text-decoration: none;
   font-weight: 600;
 }
@@ -680,7 +678,7 @@ footer a {
 footer a:hover { text-decoration: underline; }
 
 /* --- Links --- */
-a { color: var(--brown); }
+a { color: var(--red-mid); }
 
 /* --- Responsive --- */
 @media (max-width: 700px) {
@@ -691,12 +689,13 @@ a { color: var(--brown); }
   nav { gap: 0.2rem; }
   .nav-link { font-size: 0.92rem; padding: 0.45rem 0.75rem; }
 
-  .hero h1 { font-size: 2rem; }
+  .hero { padding: 1.2rem 1.5rem 1rem; }
+  .hero h1 { font-size: 1.65rem; }
 
   .meeting-body { flex-direction: column; gap: 1rem; }
   .meeting-date-block { min-width: unset; width: 90px; }
 
-  .zoom-card { flex-direction: column; text-align: center; }
+  .zoom-card { flex-direction: column; text-align: center; border-left: none; border-top: 5px solid var(--red-deep); }
 
   .form-card { padding: 1.5rem; }
 
@@ -705,5 +704,5 @@ a { color: var(--brown); }
 
 @media (max-width: 480px) {
   .logo-text { font-size: 1.2rem; }
-  .hero h1 { font-size: 1.7rem; }
+  .hero h1 { font-size: 1.45rem; }
 }
